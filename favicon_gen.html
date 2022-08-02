@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Favicon Gen</title>
+    <link rel="stylesheet" href="favicon_gen.css">
+</head>
+<body>
+<div class="container">
+    <div id="input">
+    <form action="">
+        <input type="text" name="background" placeholder="bck_color" id="color">
+        <input type="text" name="text" placeholder="text" id="font">
+        <input type="number" name="font" placeholder="font size" id="fnt" >
+        <select name="shape" id="options" placeholder="">
+            <option value="circle">circle</option>
+            <option value="square">square</option>
+            <option value="rounded">rounded</option>
+        </select>
+        <input type="submit" id="su_btn" value="submit">
+    </form>
+</div>
+    <div id="result">
+        <div id="favicon">
+            <p id="text">Your Text Here</p>
+        </div>
+    </div>
+    <button id="gen">Generate</button>
+</div>
+<!-- <script src="html2canvas.js"></script> -->
+<script src="html2canvas.min.js"></script>
+<script>
+    const color = document.getElementById('color');
+    const font = document.getElementById('font');
+    const fnt = document.getElementById('fnt');
+    const options = document.getElementById('options');
+    const btn = document.getElementById('su_btn');
+    const gen = document.getElementById('gen');
+
+
+    btn.onclick = () => {
+        document.getElementById('favicon').style.backgroundColor = color.value
+        document.getElementById('text').innerText = font.value
+        document.getElementById('text').style.fontSize = fnt.value
+  
+        if(options.selectedIndex == 0  ){
+            document.getElementById('favicon').style.borderRadius = '24px';
+        }else if(options.selectedIndex == 1){
+            document.getElementById('favicon').style.borderRadius = '0px';
+        }else {
+            document.getElementById('favicon').style.borderRadius = '5px';
+        }
+//         document.getElementById('options').addEventListener("change", function() {
+//     if(this.value == "audi"){
+//       console.log(this.value);
+//       /*Execute your script */
+//     }
+// });
+    };
+
+
+
+    gen.onclick = function() {
+        const target = document.getElementById('favicon');
+
+
+        html2canvas(target).then((canvas) => {
+           const base64image = canvas.toDataURL("image/png");
+           var anchor = document.createElement('a');
+           anchor.setAttribute("href", base64image);
+           anchor.setAttribute("download", "my-image.png");
+           anchor.click();
+           anchor.remove();
+        });
+    };
+
+
+</script>
+</body>
+</html>

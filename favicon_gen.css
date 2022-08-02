@@ -1,0 +1,48 @@
+.container
+{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+#input
+{
+    margin: auto;
+    width: 40%;
+}
+form
+{
+    width: 50%;
+    border: 1px solid grey;
+    border-radius: 5px;
+    height: 500px;
+    text-align: center;
+}
+input
+{
+    width: 60%;
+    height: 25px;
+    padding: 0px 0px 10px 10px;
+    margin: 23px;
+}
+#result
+{
+    margin: auto;
+    width: 22%;
+    height: 273px;
+    text-align: center;
+    align-items: center;
+    background-image: url(./grid.png);
+}
+#favicon
+{
+    height: 45px;
+    width: 45px;
+    border-radius: 5px;
+    background-color: green;
+    overflow: hidden;
+    margin: 121px;
+}
+p
+{
+    text-align: center
+}
