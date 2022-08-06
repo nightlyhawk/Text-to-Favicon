@@ -1,3 +1,6 @@
+import html2canvas from 'html2canvas'
+
+
 const text = document.getElementById('text');
 const logoText = document.getElementById('logoText');
 const font = document.getElementById('font');
