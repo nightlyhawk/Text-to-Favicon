@@ -84,7 +84,7 @@ shape.addEventListener('change', () => {
     if(shape.selectedIndex == 0  ){
         canvass.style.borderRadius = '0px';
     }else if(shape.selectedIndex == 1){
-        canvass.style.borderRadius = '152px';
+        canvass.style.borderRadius = '72px';
     }else {
         canvass.style.borderRadius = '10px';
     }
@@ -189,7 +189,7 @@ logoShape.addEventListener('change', () => {
     if(logoShape.selectedIndex == 0  ){
         canvass.style.borderRadius = '0px';
     }else if(logoShape.selectedIndex == 1){
-        canvass.style.borderRadius = '152px';
+        canvass.style.borderRadius = '72px';
     }else {
         canvass.style.borderRadius = '10px';
     }
