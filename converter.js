@@ -97,10 +97,10 @@ dwn_btn.onclick = function() {
 
 
     html2canvas(canvass).then((canvas) => {
-       const base64image = canvas.toDataURL("image/png");
+       const base64image = canvas.toDataURL("image/ico");
        var anchor = document.createElement('a');
        anchor.setAttribute("href", base64image);
-       anchor.setAttribute("download", "my-image.png");
+       anchor.setAttribute("download", "favicon.ico");
        anchor.click();
        anchor.remove();
     });
