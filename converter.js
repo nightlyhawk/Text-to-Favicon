@@ -98,9 +98,15 @@ dwn_btn.onclick = function() {
 
     html2canvas(canvass).then((canvas) => {
        const base64image = canvas.toDataURL("image/ico");
+       const base64image1 = canvas.toDataURL("image/png");
+	    base64image1.style.height = '16px'
+	    base64image1.style.width = '16px'
+       const base64image2 = canvas.toDataURL("image/png");
+	    base64image2.style.height = '32px'
+	    base64image2.style.width = '32px'
        var anchor = document.createElement('a');
-       anchor.setAttribute("href", base64image);
-       anchor.setAttribute("download", "favicon.ico");
+       anchor.setAttribute("href", base64image, base64image1, base64image2);
+       anchor.setAttribute("download", "favicon.ico", "favicon-16x16.png", "favicon-32x32.png");
        anchor.click();
        anchor.remove();
     });
