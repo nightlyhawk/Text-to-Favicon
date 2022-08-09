@@ -97,11 +97,14 @@ dwn_btn.onclick = function() {
 
 
     html2canvas(canvass).then((canvas) => {
-       const base64image = canvas.toDataURL("image/ico");
-       const base64image1 = canvas.toDataURL("image/png");
-	    base64image1.style.height = '16px'
-	    base64image1.style.width = '16px'
-       const base64image2 = canvas.toDataURL("image/png");
+       var base64image = new Image()	    
+       const base64image.src = canvas.toDataURL("image/ico");
+       var base64image1 = new Image()	    
+       const base64image1.src = canvas.toDataURL("image/png");
+	     base64image1.style.height = '16px'
+	     base64image1.style.width = '16px'
+         var base64image2 = new Image()	    
+         const base64image2.src = canvas.toDataURL("image/png");
 	    base64image2.style.height = '32px'
 	    base64image2.style.width = '32px'
        var anchor = document.createElement('a');
