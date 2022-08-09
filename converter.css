@@ -13,6 +13,7 @@ body
     flex-direction: row;
     width: 80%;
     margin: auto;
+    margin-top: 10%;
 }
 form
 {
@@ -57,11 +58,20 @@ input, select
 }
 .right_cont
 {
-    position: fixed;
+    /* position: fixed; */
     left: 50%;
     margin: 56px;
     width: 24%;
     height: 250px;
+}
+.scroll
+{
+    position: fixed;
+}
+.scrolled
+{
+    position: absolute;
+    top: 128%;
 }
 #label
 {

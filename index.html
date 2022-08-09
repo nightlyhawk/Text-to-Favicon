@@ -5,14 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Converter</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="converter.css" />
-    <link rel="stylesheet" href="../static/dashboard/dashboard_base.css" />
+    <link rel="stylesheet" href="./dashboard_base.css" />
   </head>
   <body>
     <header class="">
       <div class="logo">
           <a href="#">
-              <img src="../static/assets/index/logo_hd.png">
+              <img src="./logo_hd.png">
           </a>
       </div>
       <i class="fa-solid fa-bars mobile fa-2x icon" onclick="show()"></i>
@@ -259,7 +261,7 @@
         </label>
         <input type="file" accept="image/svg, image/jpeg, image/png" id="img" onchange="loadFile(event)" hidden />
       </div>
-      <div class="right_cont">
+      <div class="right_cont scroll" id="right">
         <div id="label">
           <span class="span">Logo</span>
           <span class="span" style="margin-left: 70px">Text</span>
@@ -278,10 +280,10 @@
         </button>
       </div>
     </div>
-    <footer class="footer">
+    <footer class="footer" style="margin-top: 10%;">
       <div class="l-footer">
         <div class=" logo">
-          <img src="../static/assets/index/logo_white_ft.png" id="w-logo" alt="Iconcity Logo" class="">
+          <img src="./logo_white_ft.png" id="w-logo" alt="Iconcity Logo" class="">
         </div>
         <p class="">Iconcity helps you generate your favourite favicon in the twinkle of an eye.</p>
       </div>
@@ -318,8 +320,8 @@
         <p>2022 Iconcity. All rights reserved</p>
       </div>
     </footer>
-    <script src="./html2canvas.js"></script>
-    <script src="../static/dashboard/dashboard.js"></script>
+    <script src="html2canvas.js"></script>
+    <script src="dashboard.js"></script>
     <script src="./converter.js"></script>
   </body>
 </html>

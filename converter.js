@@ -15,7 +15,7 @@ const logo_btn = document.getElementById('u_btn');
 const sel_btn = document.getElementById('sel_btn');
 const label = document.getElementById('label');
 const canvass = document.getElementById('canvas');
-const icon = document.getElementById('icon');
+const iconn = document.getElementById('icon');
 const iconp = document.getElementById('iconp');
 const dwn_btn = document.getElementById('dwn_btn');
 const form = document.getElementById('change');
@@ -27,7 +27,7 @@ const form = document.getElementById('change');
 function customize(){
     iconp.innerHTML = text.value
     label.style.display = 'none'
-    icon.style.display = 'none'
+    iconn.style.display = 'none'
     iconp.style.left = '0'
     iconp.style.bottom = '0'
     canvass.style.textAlign = 'center'
@@ -39,7 +39,7 @@ function customize(){
 font.addEventListener('change', () => {
     iconp.style.fontFamily = font.options[font.selectedIndex].text
     label.style.display = 'none'
-    icon.style.display = 'none'
+    iconn.style.display = 'none'
     iconp.style.left = '0'
     iconp.style.bottom = '0'
     canvass.style.textAlign = 'center'
@@ -50,7 +50,7 @@ font.addEventListener('change', () => {
 fontColor.addEventListener('change', () => {
     iconp.style.color = fontColor.options[fontColor.selectedIndex].text
     label.style.display = 'none'
-    icon.style.display = 'none'
+    iconn.style.display = 'none'
     iconp.style.left = '0'
     iconp.style.bottom = '0'
     canvass.style.textAlign = 'center'
@@ -61,7 +61,7 @@ fontColor.addEventListener('change', () => {
 textSize.addEventListener('change', () => {
     iconp.style.fontSize = textSize.value + 'px'
     label.style.display = 'none'
-    icon.style.display = 'none'
+    iconn.style.display = 'none'
     iconp.style.left = '0'
     iconp.style.bottom = '0'
     canvass.style.textAlign = 'center'
@@ -72,7 +72,7 @@ textSize.addEventListener('change', () => {
 color.addEventListener('change', () => {
     canvass.style.background = color.options[color.selectedIndex].text
     label.style.display = 'none'
-    icon.style.display = 'none'
+    iconn.style.display = 'none'
     iconp.style.left = '0'
     iconp.style.bottom = '0'
     canvass.style.textAlign = 'center'
@@ -136,10 +136,10 @@ logo_btn.onclick = () => {
     iconp.style.display = 'none'
     canvass.style.background = 'transparent'
     canvass.style.border = '1px transparent'
-    icon.classList.add('icon')
-    icon.classList.remove('iconf')
-    if(icon.style.display = 'none'){
-        icon.style.display = 'block'
+    iconn.classList.add('icon')
+    iconn.classList.remove('iconf')
+    if(iconn.style.display = 'none'){
+        iconn.style.display = 'block'
     }
 }
 
@@ -152,9 +152,9 @@ logoText.addEventListener('change', () => {
     label.style.display = 'none'
     iconp.style.left = '39px'
     iconp.style.bottom = '16px'
-    if((iconp.style.display = 'none') || (icon.style.display = 'none')){
+    if((iconp.style.display = 'none') || (iconn.style.display = 'none')){
         iconp.style.display = 'block'
-        icon.style.display = 'block'
+        iconn.style.display = 'block'
     }
 });
 
@@ -163,9 +163,9 @@ logoFont.addEventListener('change', () => {
     label.style.display = 'none'
     iconp.style.left = '39px'
     iconp.style.bottom = '16px'
-    if((iconp.style.display = 'none') || (icon.style.display = 'none')){
+    if((iconp.style.display = 'none') || (iconn.style.display = 'none')){
         iconp.style.display = 'block'
-        icon.style.display = 'block'
+        iconn.style.display = 'block'
     }
 });
 
@@ -175,9 +175,9 @@ logoFolor.addEventListener('change', () => {
     label.style.display = 'none'
     iconp.style.left = '39px'
     iconp.style.bottom = '16px'
-    if((iconp.style.display = 'none') || (icon.style.display = 'none')){
+    if((iconp.style.display = 'none') || (iconn.style.display = 'none')){
         iconp.style.display = 'block'
-        icon.style.display = 'block'
+        iconn.style.display = 'block'
     }
 });
 
@@ -187,9 +187,9 @@ logoTize.addEventListener('change', () => {
     label.style.display = 'none'
     iconp.style.left = '39px'
     iconp.style.bottom = '16px'
-    if((iconp.style.display = 'none') || (icon.style.display = 'none')){
+    if((iconp.style.display = 'none') || (iconn.style.display = 'none')){
         iconp.style.display = 'block'
-        icon.style.display = 'block'
+        iconn.style.display = 'block'
     }
 });
 
@@ -198,9 +198,9 @@ logoColor.addEventListener('change', () => {
     label.style.display = 'none'
     iconp.style.left = '39px'
     iconp.style.bottom = '16px'
-    if((iconp.style.display = 'none') || (icon.style.display = 'none')){
+    if((iconp.style.display = 'none') || (iconn.style.display = 'none')){
         iconp.style.display = 'block'
-        icon.style.display = 'block'
+        iconn.style.display = 'block'
     }
 });
 
@@ -220,11 +220,11 @@ up_btn.onclick = () => {
     label.style.display = 'none'
     canvass.style.background = 'transparent'
     canvass.style.border = '1px transparent'
-    icon.classList.remove('icon')
-    icon.classList.add('iconf')
-    if((iconp.style.display = 'none') || (icon.style.display = 'none')){
+    iconn.classList.remove('icon')
+    iconn.classList.add('iconf')
+    if((iconp.style.display = 'none') || (iconn.style.display = 'none')){
         iconp.style.display = 'block'
-        icon.style.display = 'block'
+        iconn.style.display = 'block'
     }
 }
 
