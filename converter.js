@@ -1,6 +1,3 @@
-import html2canvas from 'html2canvas'
-
-
 const text = document.getElementById('text');
 const logoText = document.getElementById('logoText');
 const font = document.getElementById('font');
@@ -210,3 +207,16 @@ up_btn.onclick = () => {
         icon.style.display = 'block'
     }
 }
+
+
+window.addEventListener('scroll', () => {
+    const scrolled = window.scrollY;
+    if(scrolled >= 643 ){
+        document.getElementById('right').classList.add('scrolled')
+        document.getElementById('right').classList.remove('scroll')
+
+    }
+    else
+    document.getElementById('right').classList.remove('scrolled')
+    document.getElementById('right').classList.add('scroll')
+})
