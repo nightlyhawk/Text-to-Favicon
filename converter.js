@@ -97,13 +97,33 @@ dwn_btn.onclick = function() {
 
 
     html2canvas(canvass).then((canvas) => {
-       const base64image = canvas.toDataURL("image/png");
-       var anchor = document.createElement('a');
-       anchor.setAttribute("href", base64image);
-       anchor.setAttribute("download", "my-image.png");
-       anchor.click();
-       anchor.remove();
-    });
+        var base64image = new Image()	    
+            base64image.src = canvas.toDataURL("image/ico");
+        var base64image1 = new Image()	    
+            base64image1.src = canvas.toDataURL("image/png");
+        base64image1.style.height = '16px'
+        base64image1.style.width = '16px'
+         var base64image2 = new Image()	    
+             base64image2.src = canvas.toDataURL("image/png");
+         base64image2.style.height = '32px'
+         base64image2.style.width = '32px'
+         var zip = new JSZip();
+        //  zip.file("Hello.txt", "Hello World\n");
+         var img = zip.folder("favicon");
+            img.file("favicon.ico", imgData, {base64: true});
+            img.file("favicon-16x16.png", imgData, {base64: true});
+            img.file("favicon-32x32.png", imgData, {base64: true});
+            zip.generateAsync({type:"blob"})
+            .then(function(content) {
+             // see FileSaver.js
+            saveAs(content, "favicon_ico.zip");
+});
+        var anchor = document.createElement('a');
+        anchor.setAttribute("href", zip);
+        anchor.setAttribute("download", "favicon_ico.zip");
+        anchor.click();
+        anchor.remove();
+     });
 };
 
 var loadFile = function(event) {
