@@ -97,37 +97,39 @@ dwn_btn.onclick = function() {
 
 
     html2canvas(canvass).then((canvas) => {
+        var ctx = c.getContext("2d");
+        var imgData = ctx.createImageData(100, 100);
         var base64image = new Image();	    
             base64image.src = canvas.toDataURL("image/ico");
-            const url = base64image.src;
-            async () => {
-            const img = await convertURIToImageData(url)
-            console.log(img)
-            }
+            // const url = base64image.src;
+            // async () => {
+            // const img = await convertURIToImageData(url)
+            // console.log(img)
+            // }
         var base64image1 = new Image();	    
             base64image1.src = canvas.toDataURL("image/png");
             base64image1.style.height = '16px'
             base64image1.style.width = '16px'
-        const url1 = base64image1.src;
-        async () => {
-        const img1 = await convertURIToImageData(url1)
-        console.log(img1)
-        }
+        // const url1 = base64image1.src;
+        // async () => {
+        // const img1 = await convertURIToImageData(url1)
+        // console.log(img1)
+        // }
          var base64image2 = new Image();	    
              base64image2.src = canvas.toDataURL("image/png");
              base64image2.style.height = '32px'
              base64image2.style.width = '32px'
-         const url2 = base64image2.src;
-         async () => {
-         const img2 = await convertURIToImageData(url2)
-         console.log(img2)
-         }
+        //  const url2 = base64image2.src;
+        //  async () => {
+        //  const img2 = await convertURIToImageData(url2)
+        //  console.log(img2)
+        //  }
          var zip = new JSZip();
         //  zip.file("Hello.txt", "Hello World\n");
-         var img3 = zip.folder("favicon");
-            img3.file("favicon.ico", img, {base64: true});
-            img3.file("favicon-16x16.png", img1, {base64: true});
-            img3.file("favicon-32x32.png", img2, {base64: true});
+         var img = zip.folder("favicon");
+            img.file("favicon.ico", imgData, {base64: true});
+            img.file("favicon-16x16.png", imgData, {base64: true});
+            img.file("favicon-32x32.png", imgData, {base64: true});
             zip.generateAsync({type:"blob"})
             .then(function(content) {
              // see FileSaver.js
