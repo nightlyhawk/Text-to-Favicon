@@ -160,9 +160,9 @@ dwn_btn.onclick = function() {
         base64image2.style.height = '32px'
         base64image2.style.width = '32px'    
         base64image2.src = canvas.toDataURL("image/png");
-        this.base64image2.id = "favicon2"
+        base64image2.id = "favicon2"
         function toDataURL(src, callback){
-            if(base64image2.id === "favicon2"){
+            if(this.base64image2.id === "favicon2"){
                 base64image2.onload = function(){
                 var context = canvas.getcontext('2d');
                 canvas.height = this.naturalHeight;
