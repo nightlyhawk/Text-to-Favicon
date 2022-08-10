@@ -160,24 +160,27 @@ dwn_btn.onclick = function() {
         base64image2.style.height = '32px'
         base64image2.style.width = '32px'    
         base64image2.src = canvas.toDataURL("image/png");
-        this.id = "favicon2"
-        function toDataURL(src, callback){
-            if(base64image2.id === "favicon2"){
-                base64image2.onload = function(){
-                var context = canvas.getcontext('2d');
-                canvas.height = this.naturalHeight;
+        const convertURIToImageData = (url) => {
+            return new Promise((resolve, reject) => {
+              if (!url) {
+                return reject();
+              }
+              base64image2.onload = () => {
                 canvas.width = this.naturalWidth;
-                context.drawImage(this, 0, 0);
-                var dataURL = canvas.toDataURL("image/png");
-                callback(dataURL);
+                canvas.height = this.naturalHeight;
+                context.drawImage(this, 0, 0, canvas.width, canvas.height);
+                resolve(context.getImageData(0, 0, canvas.width, canvas.height));
+              }
+              base64image2.src = url;
+            });
           };
-            base64image2.src = src
-        }
-    }
-        toDataURL('base64image2.src', function(dataURL){
-           var imgData2 = dataURL
+            const url = base64image2.src;
+            async () => {
+            const imgData2 = await convertURIToImageData(url)
             img.file("favicon-32x32.png", imgData2, {base64: true});
-        });
+            console.log(imgData2)
+            }
+       
          
         //  zip.file("Hello.txt", "Hello World\n");
            
