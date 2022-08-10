@@ -91,6 +91,7 @@ dwn_btn.onclick = function () {
   // const target = document.getElementById('favicon');
 
   var zip = new JSZip();
+  zip.file("Hello.txt", "Hello World\n");
   var img = zip.folder("favicon");
 
   html2canvas(canvass).then((canvas) => {
@@ -123,16 +124,16 @@ dwn_btn.onclick = function () {
       img.file("favicon.ico", imgData, { base64: true });
     });
 
-    var base64image1 = new Image();
-    base64image1.crossOrigin = "Anonymous";
-    base64image1.style.height = "16px";
-    base64image1.style.width = "16px";
-    base64image1.src = canvas.toDataURL("image/png");
-    base64image1.title = "favicon1";
+ 
     function toDataURL(src, callback) {
       if (!src) {
         return alert("src not found");
       }
+      var base64image1 = new Image();
+      base64image1.crossOrigin = "Anonymous";
+      base64image1.style.height = "16px";
+      base64image1.style.width = "16px";
+      base64image1.src = canvas.toDataURL("image/png");
       base64image1.onload = () => {
         var context = canvas.getcontext("2d");
         canvas.height = this.naturalHeight;
@@ -181,7 +182,7 @@ dwn_btn.onclick = function () {
       // see FileSaver.js
       saveAs(content, "favicon_ico.zip");
     });
-    
+
     var anchor = document.createElement("a");
     anchor.setAttribute("href", zip);
     anchor.setAttribute("download", "favicon_ico.zip");
