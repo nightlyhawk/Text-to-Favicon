@@ -137,7 +137,6 @@ dwn_btn.onclick = function() {
         base64image1.src = canvas.toDataURL("image/png");
         base64image1.title = "favicon1"
         function toDataURL(src, callback){
-            if(base64image1.title === "favicon1"){
                 base64image1.onload = function(){
                 var context = canvas.getcontext('2d');
                 canvas.height = this.naturalHeight;
@@ -148,7 +147,7 @@ dwn_btn.onclick = function() {
           };
             base64image1.src = src
         }
-    }
+    
         toDataURL('base64image1.src', function(dataURL){
            var imgData1 = dataURL
             img.file("favicon-16x16.png", imgData1, {base64: true});
