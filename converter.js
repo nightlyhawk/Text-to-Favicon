@@ -136,9 +136,9 @@ dwn_btn.onclick = function() {
         base64image1.style.width = '16px'
         base64image1.src = canvas.toDataURL("image/png");
         base64image1.title = "favicon1"
-         function toDataURL(src, callback){
+        function toDataURL(src, callback){
             if(base64image1.title === "favicon1"){
-            base64image1.onload = function(){
+                base64image1.onload = function(){
                 var context = canvas.getcontext('2d');
                 canvas.height = this.naturalHeight;
                 canvas.width = this.naturalWidth;
@@ -159,10 +159,10 @@ dwn_btn.onclick = function() {
         base64image2.style.height = '32px'
         base64image2.style.width = '32px'    
         base64image2.src = canvas.toDataURL("image/png");
-        base64image2.title = "favicon2"
+        base64image2.alt = "favicon2"
         function toDataURL(src, callback){
-            if(base64image2.title === "favicon2"){
-             base64image2.onload = function(){
+            if(base64image2.alt === "favicon2"){
+                base64image2.onload = function(){
                 var context = canvas.getcontext('2d');
                 canvas.height = this.naturalHeight;
                 canvas.width = this.naturalWidth;
