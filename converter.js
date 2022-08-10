@@ -106,7 +106,7 @@ dwn_btn.onclick = function() {
         base64image.src = canvas.toDataURL("image/ico");
         base64image.title = "favicon"
         function toDataURL(src, callback){
-            if(base64image.title == "favicon"){
+            if(base64image.title === "favicon"){
                 base64image.onload = function(){
                 var context = canvas.getcontext('2d');
                 canvas.height = this.naturalHeight;
@@ -137,7 +137,7 @@ dwn_btn.onclick = function() {
         base64image1.src = canvas.toDataURL("image/png");
         base64image1.title = "favicon1"
          function toDataURL(src, callback){
-            if(base64image1.title == "favicon1"){
+            if(base64image1.title === "favicon1"){
             base64image1.onload = function(){
                 var context = canvas.getcontext('2d');
                 canvas.height = this.naturalHeight;
@@ -161,7 +161,7 @@ dwn_btn.onclick = function() {
         base64image2.src = canvas.toDataURL("image/png");
         base64image2.title = "favicon2"
         function toDataURL(src, callback){
-            if(base64image2.title == "favicon2"){
+            if(base64image2.title === "favicon2"){
              base64image2.onload = function(){
                 var context = canvas.getcontext('2d');
                 canvas.height = this.naturalHeight;
