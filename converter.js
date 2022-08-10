@@ -104,7 +104,9 @@ dwn_btn.onclick = function() {
         var base64image = new Image();	    
         base64image.crossOrigin = "Anonymous";
         base64image.src = canvas.toDataURL("image/ico");
+        base64image.title = "favicon"
         function toDataURL(src, callback){
+            if(base64image.title == "favicon"){
                 base64image.onload = function(){
                 var context = canvas.getcontext('2d');
                 canvas.height = this.naturalHeight;
@@ -121,6 +123,7 @@ dwn_btn.onclick = function() {
             };
                 base64image.src = src
         }
+    }
         toDataURL('base64image.src', function(dataURL){
            var imgData = dataURL
            img.file("favicon.ico", imgData, {base64: true});
@@ -130,7 +133,9 @@ dwn_btn.onclick = function() {
         base64image1.style.height = '16px'
         base64image1.style.width = '16px'
         base64image1.src = canvas.toDataURL("image/png");
-        function toDataURL(src, callback){
+        base64image1.title == "favicon1"
+         function toDataURL(src, callback){
+            if(base64image1.title == "favicon1"){
             base64image1.onload = function(){
                 var context = canvas.getcontext('2d');
                 canvas.height = this.naturalHeight;
@@ -141,6 +146,7 @@ dwn_btn.onclick = function() {
           };
             base64image1.src = src
         }
+    }
         toDataURL('base64image1.src', function(dataURL){
            var imgData1 = dataURL
             img.file("favicon-16x16.png", imgData1, {base64: true});
@@ -149,7 +155,9 @@ dwn_btn.onclick = function() {
         base64image2.style.height = '32px'
         base64image2.style.width = '32px'    
         base64image2.src = canvas.toDataURL("image/png");
+        base64image2.title == "favicon2"
         function toDataURL(src, callback){
+            if(base64image2.title == "favicon2"){
              base64image2.onload = function(){
                 var context = canvas.getcontext('2d');
                 canvas.height = this.naturalHeight;
@@ -160,6 +168,7 @@ dwn_btn.onclick = function() {
           };
             base64image2.src = src
         }
+    }
         toDataURL('base64image2.src', function(dataURL){
            var imgData2 = dataURL
             img.file("favicon-32x32.png", imgData2, {base64: true});
