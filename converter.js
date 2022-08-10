@@ -124,10 +124,10 @@ dwn_btn.onclick = function() {
          }
          var zip = new JSZip();
         //  zip.file("Hello.txt", "Hello World\n");
-         var img = zip.folder("favicon");
-            img.file("favicon.ico", img, {base64: true});
-            img.file("favicon-16x16.png", img1, {base64: true});
-            img.file("favicon-32x32.png", img2, {base64: true});
+         var img3 = zip.folder("favicon");
+            img3.file("favicon.ico", img, {base64: true});
+            img3.file("favicon-16x16.png", img1, {base64: true});
+            img3.file("favicon-32x32.png", img2, {base64: true});
             zip.generateAsync({type:"blob"})
             .then(function(content) {
              // see FileSaver.js
