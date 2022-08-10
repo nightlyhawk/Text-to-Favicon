@@ -128,12 +128,14 @@ dwn_btn.onclick = function() {
            var imgData = dataURL
            img.file("favicon.ico", imgData, {base64: true});
         });
+
+
         var base64image1 = new Image();	    
         base64image1.crossOrigin = "Anonymous";
         base64image1.style.height = '16px'
         base64image1.style.width = '16px'
         base64image1.src = canvas.toDataURL("image/png");
-        base64image1.title == "favicon1"
+        base64image1.title = "favicon1"
          function toDataURL(src, callback){
             if(base64image1.title == "favicon1"){
             base64image1.onload = function(){
@@ -151,11 +153,13 @@ dwn_btn.onclick = function() {
            var imgData1 = dataURL
             img.file("favicon-16x16.png", imgData1, {base64: true});
         });
+
+
         var base64image2 = new Image();
         base64image2.style.height = '32px'
         base64image2.style.width = '32px'    
         base64image2.src = canvas.toDataURL("image/png");
-        base64image2.title == "favicon2"
+        base64image2.title = "favicon2"
         function toDataURL(src, callback){
             if(base64image2.title == "favicon2"){
              base64image2.onload = function(){
