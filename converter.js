@@ -138,7 +138,7 @@ dwn_btn.onclick = function() {
         base64image1.title = "favicon1"
         function toDataURL(src, callback){
                if (src) {
-                   return reject();
+                   return alert("src not found");
                   }
                 base64image1.onload =  () => {
                 var context = canvas.getcontext('2d');
