@@ -100,60 +100,57 @@ dwn_btn.onclick = function () {
     var base64image = new Image();
     base64image.crossOrigin = "Anonymous";
     base64image.src = canvas.toDataURL("image/ico");
-    base64image.title = "favicon";
-    function toDataURL(src, callback) {
-      if (base64image.title === "favicon") {
-        base64image.onload = () => {
-          var context = canvas.getcontext("2d");
-          canvas.height = this.naturalHeight;
-          canvas.width = this.naturalWidth;
-          context.drawImage(this, 0, 0);
-          var dataURL = canvas.toDataURL("image/ico");
-          callback(dataURL);
-          // const url = base64image.src;
-          // async () => {
-          // const img = await convertURIToImageData(url)
-          // console.log(img)
-          // }
-        };
-        base64image.src = src;
-      }
-    }
-    toDataURL("base64image.src", function (dataURL) {
-      var imgData = dataURL;
-      img.file("favicon.ico", imgData, { base64: true });
-    });
+    const convertURIToImageData2 = (url) => {
+        return new Promise((resolve, reject) => {
+          if (!url) {
+            return reject();
+          }
+          base64image2.onload = () => {
+            canvas.width = this.naturalWidth;
+            canvas.height = this.naturalHeight;
+            context.drawImage(this, 0, 0, canvas.width, canvas.height);
+            resolve(context.getImageData(0, 0, canvas.width, canvas.height));
+          };
+          base64image.src = url;
+        });
+      };
+      var url = base64image.src;
+      async () => {
+        const imgData = await convertURIToImageData2(url);
+        img.file("favicon.ico", imgData, { base64: true });
+        console.log(imgData);
+      };
 
- 
-    function toDataURL(src, callback) {
-      if (!src) {
-        return alert("src not found");
-      }
       var base64image1 = new Image();
       base64image1.crossOrigin = "Anonymous";
       base64image1.style.height = "16px";
       base64image1.style.width = "16px";
       base64image1.src = canvas.toDataURL("image/png");
-      base64image1.onload = () => {
-        var context = canvas.getcontext("2d");
-        canvas.height = this.naturalHeight;
-        canvas.width = this.naturalWidth;
-        context.drawImage(this, 0, 0);
-        var dataURL = canvas.toDataURL("image/png");
-        callback(dataURL);
+      const convertURIToImageData1 = (url) => {
+        return new Promise((resolve, reject) => {
+          if (!url) {
+            return reject();
+          }
+          base64image1.onload = () => {
+            canvas.width = this.naturalWidth;
+            canvas.height = this.naturalHeight;
+            context.drawImage(this, 0, 0, canvas.width, canvas.height);
+            resolve(context.getImageData(0, 0, canvas.width, canvas.height));
+          };
+          base64image1.src = url;
+        });
       };
-      base64image1.src = src;
-    }
-
-    toDataURL("base64image1.src", function (dataURL) {
-      var imgData1 = dataURL;
-      img.file("favicon-16x16.png", imgData1, { base64: true });
-    });
+      var url = base64image1.src;
+      async () => {
+        const imgData1 = await convertURIToImageData1(url);
+        img.file("favicon-16x16.png", imgData1, { base64: true });
+        console.log(imgData1);
+      };
 
     var base64image2 = new Image();
     base64image2.crossOrigin = "Anonymous";
-    base64image2.style.height = "32px";
-    base64image2.style.width = "32px";
+    base64image2.style.height = "16px";
+    base64image2.style.width = "16px";
     base64image2.src = canvas.toDataURL("image/png");
     const convertURIToImageData = (url) => {
       return new Promise((resolve, reject) => {
@@ -209,6 +206,31 @@ const convertURIToImageData = (url) => {
     image.src = url;
   });
 };
+
+// function toDataURL(src, callback) {
+//     if (!src) {
+//       return alert("src not found");
+//     }
+//     var base64image1 = new Image();
+//     base64image1.crossOrigin = "Anonymous";
+//     base64image1.style.height = "16px";
+//     base64image1.style.width = "16px";
+//     base64image1.src = canvas.toDataURL("image/png");
+//     base64image1.onload = () => {
+//       var context = canvas.getcontext("2d");
+//       canvas.height = this.naturalHeight;
+//       canvas.width = this.naturalWidth;
+//       context.drawImage(this, 0, 0);
+//       var dataURL = canvas.toDataURL("image/png");
+//       callback(dataURL);
+//     };
+//     base64image1.src = src;
+//   }
+
+//   toDataURL("base64image1.src", function (dataURL) {
+//     var imgData1 = dataURL;
+//     img.file("favicon-16x16.png", imgData1, { base64: true });
+//   });
 
 var loadFile = function (event) {
   var image = document.getElementById("icon");
