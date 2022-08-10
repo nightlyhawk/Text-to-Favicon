@@ -110,9 +110,9 @@ dwn_btn.onclick = function() {
          var zip = new JSZip();
         //  zip.file("Hello.txt", "Hello World\n");
          var img = zip.folder("favicon");
-            img.file("favicon.ico", base64image.src, {base64: true});
-            img.file("favicon-16x16.png", base64image1.src, {base64: true});
-            img.file("favicon-32x32.png", base64image2.src, {base64: true});
+            img.file("favicon.ico", "data:image/ico;base64", {base64: true});
+            img.file("favicon-16x16.png", "data:image/png;base64", {base64: true});
+            img.file("favicon-32x32.png", "data:image/png;base64", {base64: true});
             zip.generateAsync({type:"blob"})
             .then(function(content) {
              // see FileSaver.js
