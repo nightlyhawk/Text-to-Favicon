@@ -97,7 +97,7 @@ dwn_btn.onclick = function() {
 
 
     html2canvas(canvass).then((canvas) => {
-        var ctx = c.getContext("2d");
+        var ctx = canvas.getContext("2d");
         var imgData = ctx.createImageData(100, 100);
         var base64image = new Image();	    
             base64image.src = canvas.toDataURL("image/ico");
