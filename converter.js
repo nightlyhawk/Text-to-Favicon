@@ -114,10 +114,10 @@ dwn_btn.onclick = function () {
           base64image.src = url;
         });
       };
-      var url2 = base64image.src;
+      const url2 = base64image.src;
       async () => {
         const imgData = await convertURIToImageData2(url2);
-        img.file("favicon.ico", imgData, { base64: true });
+        
         console.log(imgData);
       };
 
@@ -140,10 +140,10 @@ dwn_btn.onclick = function () {
           base64image1.src = url;
         });
       };
-      var url1 = base64image1.src;
+      const url1 = base64image1.src;
       async () => {
         const imgData1 = await convertURIToImageData1(url1);
-        img.file("favicon-16x16.png", imgData1, { base64: true });
+        
         console.log(imgData1);
       };
 
@@ -169,10 +169,13 @@ dwn_btn.onclick = function () {
     const url = base64image2.src;
     async () => {
       const imgData2 = await convertURIToImageData(url);
-      img.file("favicon-32x32.png", imgData2, { base64: true });
+      
       console.log(imgData2);
     };
 
+    img.file("favicon-32x32.png", imgData2, { base64: true });
+    img.file("favicon-16x16.png", imgData1, { base64: true });
+    img.file("favicon.ico", imgData, { base64: true });
     zip.generateAsync({type:"blob"}).then(function(content) {
         // see FileSaver.js
         saveAs(content, "favicon_ico.zip");
