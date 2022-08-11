@@ -106,9 +106,9 @@ dwn_btn.onclick = function () {
             return reject();
           }
           base64image2.onload = () => {
-            canvas.width = this.naturalWidth;
-            canvas.height = this.naturalHeight;
-            context.drawImage(this, 0, 0, canvas.width, canvas.height);
+            canvas.width = base64image.width;
+            canvas.height = base64image.height;
+            context.drawImage(base64image, 0, 0, canvas.width, canvas.height);
             resolve(context.getImageData(0, 0, canvas.width, canvas.height));
           };
           base64image.src = url;
@@ -132,9 +132,9 @@ dwn_btn.onclick = function () {
             return reject();
           }
           base64image1.onload = () => {
-            canvas.width = this.naturalWidth;
-            canvas.height = this.naturalHeight;
-            context.drawImage(this, 0, 0, canvas.width, canvas.height);
+            canvas.width = base64image1.width;
+            canvas.height = base64image1.height;
+            context.drawImage(base64image1, 0, 0, canvas.width, canvas.height);
             resolve(context.getImageData(0, 0, canvas.width, canvas.height));
           };
           base64image1.src = url;
@@ -158,9 +158,9 @@ dwn_btn.onclick = function () {
           return reject();
         }
         base64image2.onload = () => {
-          canvas.width = this.naturalWidth;
-          canvas.height = this.naturalHeight;
-          context.drawImage(this, 0, 0, canvas.width, canvas.height);
+          canvas.width = base64image2.width;
+          canvas.height = base64image2.height;
+          context.drawImage(base64image2, 0, 0, canvas.width, canvas.height);
           resolve(context.getImageData(0, 0, canvas.width, canvas.height));
         };
         base64image2.src = url;
