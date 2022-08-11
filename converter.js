@@ -173,11 +173,9 @@ dwn_btn.onclick = function () {
       console.log(imgData2);
     };
 
-    //  zip.file("Hello.txt", "Hello World\n");
-
-    zip.generateAsync({ type: "blob" }).then(function (content) {
-      // see FileSaver.js
-      saveAs(content, "favicon_ico.zip");
+    zip.generateAsync({type:"blob"}).then(function(content) {
+        // see FileSaver.js
+        saveAs(content, "favicon_ico.zip");
     });
 
     var anchor = document.createElement("a");
