@@ -119,7 +119,7 @@ dwn_btn.onclick = function () {
       const url2 = base64image.src;
       const load = async () => {
         const imgData = await convertURIToImageData2(url2);
-        img.file("favicon.ico", imgData, { Uint8Array: true });
+        img.file("favicon.ico", imgData, { Uint8ClampedArray: true });
         console.log(imgData);
       };
       load()
@@ -146,7 +146,7 @@ dwn_btn.onclick = function () {
       const url1 = base64image1.src;
       const load1 = async () => {
         const imgData1 = await convertURIToImageData1(url1);
-        img.file("favicon-16x16.png", imgData1, { Uint8Array: true });
+        img.file("favicon-16x16.png", imgData1, { Uint8ClampedArray: true });
         console.log(imgData1);
       };
       load1()
@@ -173,7 +173,7 @@ dwn_btn.onclick = function () {
     const url = base64image2.src;
     const load2 = async () => {
       const imgData2 = await convertURIToImageData(url);
-      img.file("favicon-32x32.png", imgData2, { Uint8Array: true });
+      img.file("favicon-32x32.png", imgData2, { Uint8ClampedArray: true });
       console.log(imgData2);
     };
     load2()
