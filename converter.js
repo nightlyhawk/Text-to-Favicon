@@ -115,13 +115,13 @@ dwn_btn.onclick = function () {
         });
       };
       const url2 = base64image.src;
-      async () => {
+      const load = async () => {
         const imgData = await convertURIToImageData2(url2);
         img.file("favicon.ico", imgData, { base64: true });
         console.log(imgData);
       };
       load()
-      img.file("favicon.ico", imgData, { base64: true });
+    //   img.file("favicon.ico", imgData, { base64: true });
 
     //   var base64image1 = new Image();
     //   base64image1.crossOrigin = "Anonymous";
