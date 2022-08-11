@@ -114,9 +114,9 @@ dwn_btn.onclick = function () {
           base64image.src = url;
         });
       };
-      var url = base64image.src;
+      var url2 = base64image.src;
       async () => {
-        const imgData = await convertURIToImageData2(url);
+        const imgData = await convertURIToImageData2(url2);
         img.file("favicon.ico", imgData, { base64: true });
         console.log(imgData);
       };
@@ -140,9 +140,9 @@ dwn_btn.onclick = function () {
           base64image1.src = url;
         });
       };
-      var url = base64image1.src;
+      var url1 = base64image1.src;
       async () => {
-        const imgData1 = await convertURIToImageData1(url);
+        const imgData1 = await convertURIToImageData1(url1);
         img.file("favicon-16x16.png", imgData1, { base64: true });
         console.log(imgData1);
       };
