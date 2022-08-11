@@ -90,9 +90,9 @@ shape.addEventListener("change", () => {
 dwn_btn.onclick = function () {
   // const target = document.getElementById('favicon');
 
-  var zip = new JSZip();
+  const zip = new JSZip();
   zip.file("links.html", "Hello World\n");
-  var img = zip.folder("favicon");
+  const img = zip.folder("favicon");
 
   html2canvas(canvass).then((canvas) => {
     // var ctx = canvas.getContext("2d");
@@ -105,7 +105,7 @@ dwn_btn.onclick = function () {
           if (!url) {
             return reject();
           }
-          base64image2.onload = () => {
+          base64image.onload = () => {
             canvas.width = base64image.width;
             canvas.height = base64image.height;
             context.drawImage(base64image, 0, 0, canvas.width, canvas.height);
@@ -120,7 +120,8 @@ dwn_btn.onclick = function () {
         img.file("favicon.ico", imgData, { base64: true });
         console.log(imgData);
       };
-      
+      load()
+      img.file("favicon.ico", imgData, { base64: true });
 
     //   var base64image1 = new Image();
     //   base64image1.crossOrigin = "Anonymous";
